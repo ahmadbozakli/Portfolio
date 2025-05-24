@@ -35,7 +35,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-10 text-white text-sm font-medium">
+        <nav className="hidden md:flex gap-10 text-white text-sm font-medium ">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -57,19 +57,19 @@ export function Navbar() {
           </a>
         </Button>
         {/* Mobile Navigation */}
-        <div className="md:hidden">
+        <div className="md:hidden ">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-white/20 ">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent
               side="left"
-              className="w-[300px] p-0 bg-card text-card-foreground"
+              className="w-[300px] p-0 bg-gray-300/70 text-gray-900"
             >
-              <div className="flex h-full flex-col">
+              <div className="flex h-full flex-col ">
                 <div className="p-6 border-b border-border">
                   <SheetClose asChild>
                     <Link
@@ -82,13 +82,13 @@ export function Navbar() {
                     </Link>
                   </SheetClose>
                 </div>
-                <nav className="flex flex-col space-y-2 p-6 flex-grow">
+                <nav className="flex flex-col space-y-2 p-6 flex-grow ">
                   {navItems.map((item) => (
                     <SheetClose asChild key={item.label}>
                       <Link
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block px-3 py-2 rounded-md text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-accent"
+                        className="block px-3 py-2 rounded-md text-lg font-medium text-gray-900 hover:text-white hover:bg-white/10 transition"
                       >
                         {item.label}
                       </Link>

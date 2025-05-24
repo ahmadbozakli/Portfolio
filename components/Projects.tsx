@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Github, ExternalLink, CodeXml } from "lucide-react";
+import { CodeXml } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -81,17 +80,22 @@ const projects = [
   },
 ];
 
-
 export function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24 mx-10">
       <div className="text-center mb-16 md:mb-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 inline-flex items-center justify-center">
-          <CodeXml className="mr-4 h-10 w-10 text-gray-400" />
-          Featured Projects
-        </h2>
-        <div className="mt-4 h-1 w-32 bg-gradient-to-r from-gray-600 to-gray-400 mx-auto rounded-full"></div>
-        <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <div className="p-3 bg-white/5 border border-white/10 rounded-full shadow-inner backdrop-blur">
+            <CodeXml className="h-5 w-5 text-accent" />
+          </div>
+          <h2 className="text-3xl sm:text-2xl md:text-5xl font-bold text-white">
+            Featured Projects
+          </h2>
+        </div>
+
+        <div className="w-40  h-[2px] bg-gray-400/50 mx-auto mb-4 rounded-full" />
+
+        <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
           A showcase of my recent work and side projects
         </p>
       </div>
@@ -110,16 +114,15 @@ export function Projects() {
               index === 0 ? "md:col-span-2 xl:col-span-1" : ""
             }`}
           >
-            <div className="relative w-full h-56 md:h-64 overflow-hidden">
+            <div className="relative w-full aspect-[16/10] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="rounded-t-xl transition-transform group-hover:scale-105"
-                data-ai-hint={project.imageHint}
+                className="object-cover object-center w-full h-full transition-transform duration-500 group-hover:scale-105"
               />
+
               <div className="absolute top-4 right-4 z-20">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/80"></div>

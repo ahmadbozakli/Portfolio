@@ -3,7 +3,8 @@ const nextConfig = {
   images: {
     domains: [
       'placehold.co',
-      "ik.imagekit.io"
+      "ik.imagekit.io",
+      "em-content.zobj.net",
     ]
   }
 };

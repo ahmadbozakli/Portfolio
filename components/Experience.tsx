@@ -37,7 +37,6 @@ const experienceData: ExperienceType[] = [
   },
 ];
 
-
 export function Experience() {
   return (
     <section
@@ -63,9 +62,9 @@ export function Experience() {
                 isLeft ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              {/* Marker */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                <div className="w-5 h-5 rounded-full bg-white border-4 border-black flex items-center justify-center">
+              {/* Marker (fixed position per item) */}
+              <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                <div className="w-4 h-4 rounded-full bg-white border-2 border-black flex items-center justify-center">
                   {exp.id.startsWith("edu") && (
                     <GraduationCap className="h-3 w-3 text-accent" />
                   )}
@@ -73,10 +72,8 @@ export function Experience() {
 
                 {/* Arrow */}
                 <div
-                  className={` bg-accent rotate-45 absolute top-1/2 -translate-y-1/2 ${
-                    isLeft
-                      ? "left-[calc(100%+4px)]"
-                      : "right-[calc(100%+4px)]"
+                  className={`hidden bg-accent w-2 h-2 rotate-45 absolute top-full mt-1 ${
+                    isLeft ? "ml-[2px]" : "-ml-[10px]"
                   }`}
                 />
               </div>
