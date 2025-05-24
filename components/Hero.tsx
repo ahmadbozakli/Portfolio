@@ -34,7 +34,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight max-w-3xl"
         >
-          FullStack Devolper
+          Full Stack Developer
         </motion.h1>
 
         {/* Description */}
@@ -43,9 +43,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
           className="text-gray-400 max-w-xl text-sm sm:text-base md:text-lg"
-        >
-          I specialize in transforming designs into functional, high-performing
-          web applications. Let’s discuss your next project.
+        >I build smart, fast, and beautiful full-stack apps — from AI-powered search to 3D product previews.
+
+
         </motion.p>
 
         {/* Buttons */}
